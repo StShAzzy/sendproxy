@@ -1,5 +1,58 @@
 "Games"
 {
+	"#default"
+	{
+		"#supported"
+		{
+			"game"	"tf"
+			"game"	"left4dead2"
+			"game"	"cstrike"
+		}
+
+		"Signatures"
+		{
+			"CGameClient::ShouldSendMessages"
+			{
+				"library"			"engine"
+				"linux"				"@_ZN11CGameClient18ShouldSendMessagesEv"
+			}
+			"CGameServer::SendClientMessages"
+			{
+				"library"			"engine"
+				"linux"				"@_ZN11CGameServer18SendClientMessagesEb"
+			}
+			"SV_ComputeClientPacks"
+			{
+				"library"			"engine"
+				"linux"				"@_Z21SV_ComputeClientPacksiPP11CGameClientP14CFrameSnapshot"
+			}
+			"SendTable_Encode"
+			{
+				"library"			"engine"
+				"linux"				"@_Z16SendTable_EncodePK9SendTablePKvP8bf_writeiP10CUtlMemoryI20CSendProxyRecipientsiEb"
+			}
+			"SV_EnsureInstanceBaseline"
+			{
+				"library"			"engine"
+				"linux"				"@_Z25SV_EnsureInstanceBaselineP11ServerClassiPKvi"
+			}
+			"SV_CreateBaseline"
+			{
+				"library"			"engine"
+				"linux"				"@_Z17SV_CreateBaselinev"
+			}
+			"SendTable_CalcDelta"
+			{
+				"library"			"engine"
+				"linux"				"@_Z19SendTable_CalcDeltaPK9SendTablePKviS3_iPiii"
+			}
+			"CFrameSnapshotManager::CreatePackedEntity"
+			{
+				"library"			"engine"
+				"linux"				"@_ZN21CFrameSnapshotManager18CreatePackedEntityEP14CFrameSnapshoti"
+			}
+		}
+	}
 	"tf"
 	{
 		"Signatures"
@@ -13,14 +66,35 @@
 			"CGameServer::SendClientMessages"
 			{
 				"library"			"engine"
-				"windows"			"\x55\x8B\xEC\x81\xEC\x30\x04\x00\x00\x53\x56\x57\x33\xDB"
+				"windows"			"\x55\x8B\xEC\x81\xEC\x34\x04\x00\x00\x53\x56\x8B\xF1"
 				"linux"				"@_ZN11CGameServer18SendClientMessagesEb"
 			}
 			"SV_ComputeClientPacks"
 			{
 				"library"			"engine"
-				"windows"			"\x55\x8B\xEC\x83\xEC\x38\x8B\x0D\x2A\x2A\x2A\x2A\x53\x33\xDB"
+				"windows"			"\x55\x8B\xEC\x83\xEC\x64\x8B\x0D\x2A\x2A\x2A\x2A"
 				"linux"				"@_Z21SV_ComputeClientPacksiPP11CGameClientP14CFrameSnapshot"
+			}
+		}
+	}
+	"cstrike"
+	{
+		"Signatures"
+		{
+			"CGameClient::ShouldSendMessages"
+			{
+				"library"			"engine"
+				"windows"			"\x55\x8B\xEC\x51\x56\x8B\xF1\x80\xBE\x94\x00\x00\x00\x00"
+			}
+			"CGameServer::SendClientMessages"
+			{
+				"library"			"engine"
+				"windows"			"\x55\x8B\xEC\x81\xEC\x30\x04\x00\x00\x53\x56\x57\x33\xDB"
+			}
+			"SV_ComputeClientPacks"
+			{
+				"library"			"engine"
+				"windows"			"\x55\x8B\xEC\x83\xEC\x38\x8B\x0D\x2A\x2A\x2A\x2A\x53\x33\xDB"
 			}
 		}
 	}
